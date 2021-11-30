@@ -6,12 +6,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
+import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -79,7 +81,12 @@ public class Fragment_one extends Fragment {
             @Override
             public void onClick(View v) {
 
-                navController.navigate(R.id.action_fragment_one_to_fragment_two);
+                EditText frag2Data = view.findViewById(R.id.frag2Data);
+
+                NavDirections action = Fragment_oneDirections.actionFragmentOneToFragmentTwo(frag2Data.getText().toString());
+                // if you cannot find fragDirections, change project structure from "android" to project"
+
+                navController.navigate(action);
 
             }
         });

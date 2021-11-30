@@ -32,5 +32,8 @@
             android:id="@+id/action_fragment_two_to_fragment_three"
             app:destination="@id/fragment_three"
             app:popUpTo="@id/fragment_one" />
+        <argument
+            android:name="userdata"
+            app:argType="string" />
     </fragment>
 </navigation>

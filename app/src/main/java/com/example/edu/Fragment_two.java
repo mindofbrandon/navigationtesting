@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -72,12 +73,21 @@ public class Fragment_two extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        String name = Fragment_twoArgs.fromBundle(getArguments()).getUserdata();
+        TextView frag1Data = view.findViewById(R.id.frag1Data);
+
+        frag1Data.setText(name);
+
+
         NavController navController = Navigation.findNavController(view);
         Button button = view.findViewById(R.id.frag3btn);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
+
 
                 navController.navigate(R.id.action_fragment_two_to_fragment_three);
 
