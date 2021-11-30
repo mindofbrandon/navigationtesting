@@ -33,7 +33,7 @@
             app:destination="@id/fragment_three"
             app:popUpTo="@id/fragment_one" />
         <argument
-            android:name="userdata"
-            app:argType="string" />
+            android:name="user"
+            app:argType="com.example.edu.User" />
     </fragment>
 </navigation>

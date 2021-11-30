@@ -14,6 +14,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link Fragment_two#newInstance} factory method to
@@ -73,10 +75,26 @@ public class Fragment_two extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        String name = Fragment_twoArgs.fromBundle(getArguments()).getUserdata();
-        TextView frag1Data = view.findViewById(R.id.frag1Data);
 
-        frag1Data.setText(name);
+        //region shareobjectsbetweenfragments
+        // receive data
+        String emailReceived = Fragment_twoArgs.fromBundle(getArguments()).getUser().email;
+        String passwordReceived = Fragment_twoArgs.fromBundle(getArguments()).getUser().password;
+        // getUser function naming will change depending on the argumentname given in nav_graph on specific fragment
+
+
+        // refer to textview
+        TextView emailtv = view.findViewById(R.id.userEmail);
+        TextView usertv = view.findViewById(R.id.userPassword);
+
+        // set data to textview
+        emailtv.setText(emailReceived);
+        usertv.setText(passwordReceived);
+        //endregion
+
+
+
+
 
 
         NavController navController = Navigation.findNavController(view);
@@ -85,7 +103,6 @@ public class Fragment_two extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
 
 
 

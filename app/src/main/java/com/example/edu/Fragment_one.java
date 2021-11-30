@@ -81,12 +81,17 @@ public class Fragment_one extends Fragment {
             @Override
             public void onClick(View v) {
 
-                EditText frag2Data = view.findViewById(R.id.frag2Data);
 
-                NavDirections action = Fragment_oneDirections.actionFragmentOneToFragmentTwo(frag2Data.getText().toString());
-                // if you cannot find fragDirections, change project structure from "android" to project"
 
-                navController.navigate(action);
+                EditText email = view.findViewById(R.id.email);
+                EditText password = view.findViewById(R.id.password);
+
+                User user = new User(email.getText().toString(), password.getText().toString());
+
+
+                NavDirections action = Fragment_oneDirections.actionFragmentOneToFragmentTwo(user); // if "user" shows error, rebuild project
+
+                navController.navigate(action); // send object from frag1 to frag2
 
             }
         });
