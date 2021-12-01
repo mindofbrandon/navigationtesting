@@ -17,10 +17,10 @@ import android.widget.EditText;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Fragment_one#newInstance} factory method to
+ * Use the {@link Fragment_signup#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Fragment_one extends Fragment {
+public class Fragment_signup extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -31,7 +31,7 @@ public class Fragment_one extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public Fragment_one() {
+    public Fragment_signup() {
         // Required empty public constructor
     }
 
@@ -44,8 +44,8 @@ public class Fragment_one extends Fragment {
      * @return A new instance of fragment Fragment_one.
      */
     // TODO: Rename and change types and number of parameters
-    public static Fragment_one newInstance(String param1, String param2) {
-        Fragment_one fragment = new Fragment_one();
+    public static Fragment_signup newInstance(String param1, String param2) {
+        Fragment_signup fragment = new Fragment_signup();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -66,7 +66,7 @@ public class Fragment_one extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_one, container, false);
+        return inflater.inflate(R.layout.fragment_signup, container, false);
     }
 
     // implement navigation
@@ -75,7 +75,7 @@ public class Fragment_one extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         NavController navController = Navigation.findNavController(view);
-        Button button = view.findViewById(R.id.frag2btn);
+        Button button = view.findViewById(R.id.createAccountButton);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,10 +88,12 @@ public class Fragment_one extends Fragment {
 
                 User user = new User(email.getText().toString(), password.getText().toString());
 
+                NavDirections action = Fragment_signupDirections.actionFragmentSignupToFragmentHome();
+                navController.navigate(action);
+                //NavDirections action = Fragment_loginDirections.act
+                //NavDirections action = Fragment_SignUpDirections.actionFragmentOneToFragmentTwo(user); // if "user" shows error, rebuild project
 
-                NavDirections action = Fragment_oneDirections.actionFragmentOneToFragmentTwo(user); // if "user" shows error, rebuild project
-
-                navController.navigate(action); // send object from frag1 to frag2
+                //navController.navigate(action); // send object from frag1 to frag2
 
             }
         });

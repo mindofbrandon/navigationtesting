@@ -2,24 +2,18 @@ package com.example.edu;
 
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
-import androidx.navigation.NavOptions;
-import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Fragment_three#newInstance} factory method to
+ * Use the {@link Fragment_home#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Fragment_three extends Fragment {
+public class Fragment_home extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -30,7 +24,7 @@ public class Fragment_three extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public Fragment_three() {
+    public Fragment_home() {
         // Required empty public constructor
     }
 
@@ -40,11 +34,11 @@ public class Fragment_three extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Fragment_three.
+     * @return A new instance of fragment Fragment_Home.
      */
     // TODO: Rename and change types and number of parameters
-    public static Fragment_three newInstance(String param1, String param2) {
-        Fragment_three fragment = new Fragment_three();
+    public static Fragment_home newInstance(String param1, String param2) {
+        Fragment_home fragment = new Fragment_home();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -65,30 +59,6 @@ public class Fragment_three extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_three, container, false);
+        return inflater.inflate(R.layout.fragment_home, container, false);
     }
-
-    // implement navigation
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-        NavController navController = Navigation.findNavController(view);
-        Button button = view.findViewById(R.id.frag1btn);
-
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                //navController.navigate(R.id.action_fragment_three_to_fragment_one);
-
-                NavOptions navOptions = new NavOptions.Builder().setPopUpTo(R.id.fragment_signup, true).build();
-
-                navController.navigate(R.id.action_fragment_three_to_fragment_one, null,navOptions);
-
-            }
-        });
-    }
-
-
 }
