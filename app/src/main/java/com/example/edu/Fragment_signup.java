@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
+import androidx.navigation.NavDestination;
 import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 
@@ -90,6 +91,12 @@ public class Fragment_signup extends Fragment {
 
                 NavDirections action = Fragment_signupDirections.actionFragmentSignupToFragmentHome();
                 navController.navigate(action);
+
+
+
+
+
+
                 //NavDirections action = Fragment_loginDirections.act
                 //NavDirections action = Fragment_SignUpDirections.actionFragmentOneToFragmentTwo(user); // if "user" shows error, rebuild project
 
