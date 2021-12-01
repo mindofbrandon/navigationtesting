@@ -83,8 +83,8 @@ public class Fragment_one extends Fragment {
 
 
 
-                EditText email = view.findViewById(R.id.email);
-                EditText password = view.findViewById(R.id.password);
+                EditText email = view.findViewById(R.id.emailData);
+                EditText password = view.findViewById(R.id.passwordData);
 
                 User user = new User(email.getText().toString(), password.getText().toString());
 

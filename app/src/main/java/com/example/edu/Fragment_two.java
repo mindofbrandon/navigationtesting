@@ -84,8 +84,8 @@ public class Fragment_two extends Fragment {
 
 
         // refer to textview
-        TextView emailtv = view.findViewById(R.id.userEmail);
-        TextView usertv = view.findViewById(R.id.userPassword);
+        TextView emailtv = view.findViewById(R.id.emailDisplay);
+        TextView usertv = view.findViewById(R.id.passwordDisplay);
 
         // set data to textview
         emailtv.setText(emailReceived);
